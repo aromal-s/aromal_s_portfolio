@@ -2,7 +2,7 @@
 import './Navbar.css'
 import contact from '../assets/contact.png'
 import logo from '../assets/aromal_logo.svg'
-import Intro from '../intro/Intro'
+
 import {Link} from 'react-scroll'
 function Navbar() {
   return (

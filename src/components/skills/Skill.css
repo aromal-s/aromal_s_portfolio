@@ -1,7 +1,8 @@
 #skills {
     overflow: hidden;
     width: 100vw;
-    max-width: 65rem;
+    max-width: 75rem;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,6 +40,7 @@
     border-radius: 0.5rem;
      background: rgba(149, 91, 91, 0.08);
   backdrop-filter: blur(50px);
+   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .skillBarImg {
