@@ -1,0 +1,84 @@
+/* Navbar.css */
+.navbar {
+  width: 100vw;
+  height: 5rem;
+  margin: 0.5rem auto;
+
+  max-width: 75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 1rem 2rem;
+  z-index: 100;
+  
+  
+}
+
+.logo {
+  object-fit: cover;
+  height: 3.5rem;
+  width: 4rem;
+  border-radius: 10px;
+}
+
+.desktopmenulist {
+  margin: 2rem;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+}
+
+.desktopmenulist:hover {
+  color: rgb(195, 190, 190);
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid rgb(195, 190, 190);
+}
+
+.desktop-menu-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: medium;
+
+  padding: 11px 20px;
+}
+
+.desktop-menu-btn:hover {
+  background-color: rgb(233, 225, 225);
+}
+.contact {
+  object-fit: cover;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.8rem;
+}
+
+.desktop-menu {
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-align: center;
+
+  max-width: 900px;
+  background: rgba(149, 91, 91, 0.08);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+  backdrop-filter: blur(15px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
