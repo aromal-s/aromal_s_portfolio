@@ -2,15 +2,23 @@
 import './Navbar.css'
 import contact from '../assets/contact.png'
 import logo from '../assets/aromal_logo.svg'
-
+import Intro from '../intro/Intro'
 import {Link} from 'react-scroll'
 function Navbar() {
   return (
     <nav className="navbar">
         <img src={logo} alt="logo"  className='logo' />
         <div className="desktop-menu">
-        <Link className='desktopmenulist'>Home</Link>
-        <Link className='desktopmenulist'>About</Link>
+            <Link
+          className="desktopmenulist"
+          to="intro"
+          smooth={true}
+          duration={500}
+        >
+          Home
+        </Link>
+        <Link className='desktopmenulist' to='skills'smooth={true}
+          duration={500} >About</Link>
         <Link className='desktopmenulist'>Portfolio</Link>
 
         </div>

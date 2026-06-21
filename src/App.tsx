@@ -1,6 +1,7 @@
 import Lightfall from "./components/Lightfall";
 import Navbar from "./components/navbar/Navbar";
 import Intro from "./components/intro/Intro";
+import Skill from "./components/skills/Skill";
 function App() {
   return <>
     <Lightfall
@@ -24,6 +25,7 @@ function App() {
 
 <Navbar></Navbar>
 <Intro></Intro>
+<Skill></Skill>
   </>;
 }
 
