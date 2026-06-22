@@ -1,0 +1,137 @@
+#contactPage {
+  min-height: calc(100vh - 10rem);
+  width: 100vw;
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactPageTitle {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.contactDesc {
+  padding: 1rem;
+  font-size: medium;
+  font-weight: 300;
+  text-align: center;
+  color: white;
+  text-align: center;
+  margin-bottom: 0rem;
+}
+
+.contactForm {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  max-width: 60rem;
+}
+
+.name,
+.email,
+.msg {
+  font-size: medium;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  background: rgba(149, 91, 91, 0.08);
+  backdrop-filter: blur(100px);
+}
+
+.submitBtn {
+  background: white;
+  border: none;
+  font-size: medium;
+  border-radius: 2rem;
+  margin: 2rem;
+  padding: 0.75rem 3.5rem;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color: rgb(233, 225, 225);
+}
+
+.popupOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  width: 320px;
+  padding: 2rem;
+  text-align: center;
+
+  background: rgba(149, 91, 91, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+
+  color: white;
+
+  animation: popupAnimation 0.35s ease;
+}
+
+.checkmark {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #22c55e;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.popupBtn {
+  margin-top: 1.5rem;
+  padding: 1.5rem 1.5rem;
+  border: none;
+
+  font-weight: bold;
+
+  background: white;
+  border: none;
+  font-size: large;
+  border-radius: 100rem;
+
+  cursor: pointer;
+}
+
+.popupBtn:hover {
+  background-color: rgb(233, 225, 225);
+}
+
+@keyframes popupAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

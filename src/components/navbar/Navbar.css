@@ -17,8 +17,6 @@
 
   padding: 1rem 2rem;
   z-index: 100;
-  
-  
 }
 
 .logo {
@@ -74,11 +72,65 @@
 
   max-width: 900px;
   background: rgba(149, 91, 91, 0.08);
-  backdrop-filter: blur(5px);
+
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: white;
   backdrop-filter: blur(15px);
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.4),
     inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.listItem {
+  color: white;
+  padding: 0.5rem 3rem;
+  margin: 0.25rem;
+  background: rgb(30, 30, 30);
+  font-weight: bold;
+  font-size: small;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.active {
+  color: rgb(195, 190, 190);
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid rgb(195, 190, 190);
+}
+.mobMenu {
+  display: none;
+  object-fit: cover;
+  height: 1.8rem;
+}
+.listItem:hover {
+  color: rgb(195, 190, 190);
+
+  border-bottom: 2px solid rgb(195, 190, 190);
+}
+
+.navMenu {
+  position: absolute;
+  top: 4rem;
+  right: 2rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  height: fit-content;
+  min-width: 15rem;
+  background: rgba(149, 91, 91, 0.08);
+  border-radius: 1rem;
+  backdrop-filter: blur(15px);
+}
+
+@media screen and (max-width: 720px) {
+  .mobMenu {
+    display: flex;
+  }
+  .desktop-menu {
+    display: none;
+  }
+  .desktop-menu-btn {
+    display: none;
+  }
 }
