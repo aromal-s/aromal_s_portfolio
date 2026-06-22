@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Footer.css";
 import insta from "../assets/instagram.png";
 import linked from "../assets/linkedin.png";

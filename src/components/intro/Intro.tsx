@@ -1,8 +1,8 @@
-import React from "react";
+
 import bg from "../assets/bgimage.jpeg";
 import hire from "../assets/hireme.png";
 import "./Intro.css";
-import { Link } from "react-scroll";
+
 function Intro() {
   return (
     <section id="intro">

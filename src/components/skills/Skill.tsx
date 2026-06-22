@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Skill.css";
 import develop from "../assets/webdevelop.png";
 import dash from "../assets/dashboard.png";

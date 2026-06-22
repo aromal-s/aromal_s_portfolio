@@ -46,7 +46,7 @@ function Contact() {
           <textarea
             className="msg"
             name="message"
-            rows="5"
+            rows={5}
             placeholder="Your Message"
           ></textarea>
           <button type="submit" value="Send" className="submitBtn">
