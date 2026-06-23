@@ -126,7 +126,7 @@ vec2 sceneC(vec2 frag, vec2 r) {
   float z = 0.0;
   float d = 1e3;
   vec4 O = vec4(0.0);
-  for (int k = 0; k < 39; k++) {
+  for (int k = 0; k < 24; k++) {
     if (d <= 1e-4) break;
     O = z * normalize(vec4(P, uZoom, 0.0)) - vec4(0.0, 4.0, 1.0, 0.0) / 4.5;
     d = 1.0 - sqrt(length(O * O));
@@ -143,13 +143,6 @@ void mainImage(out vec4 o, vec2 C) {
   vec2 Y = vec2(5e-3, 6.28318530718 / angRings);
 
   vec2 c0 = sceneC(C, r);
-  vec2 cdx = sceneC(C + vec2(1.0, 0.0), r);
-  vec2 cdy = sceneC(C + vec2(0.0, 1.0), r);
-  vec2 dCx = cdx - c0;
-  vec2 dCy = cdy - c0;
-  dCx.y -= 6.28318530718 * floor(dCx.y / 6.28318530718 + 0.5);
-  dCy.y -= 6.28318530718 * floor(dCy.y / 6.28318530718 + 0.5);
-  vec2 fw = abs(dCx) + abs(dCy);
   C = c0;
 
   vec2 P = vec2(2.0, 1.0) * uv0 - (r / r.x) * vec2(0.0, 1.0);
@@ -164,9 +157,8 @@ void mainImage(out vec4 o, vec2 C) {
   }
 
   float zr = 5e-4 * uStreakWidth;
-  vec2 rr = vec2(max(length(fw), 1e-5));
+  vec2 rr = vec2(0.003); // Fixed smoothness factor to avoid expensive neighbor derivative calculations
   float tail = 19.0 / max(uStreakLength, 0.05);
-
   for (int m = 0; m < 16; m++) {
     if (m >= uStreakCount) break;
     float jf = float(m) + 1.0;
@@ -229,10 +221,12 @@ const Lightfall: React.FC<LightfallProps> = ({
     const container = containerRef.current;
     if (!container) return;
 
+    const baseDpr = dpr ?? (typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1);
+    // Cap DPR to 1.25 to prevent performance degradation on high-resolution displays
+    const cappedDpr = Math.min(baseDpr, 1.25);
+
     const renderer = new Renderer({
-      dpr:
-        dpr ??
-        (typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1),
+      dpr: cappedDpr,
       alpha: true,
       antialias: true,
     });

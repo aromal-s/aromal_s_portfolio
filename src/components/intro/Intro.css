@@ -1,41 +1,41 @@
 #intro {
   min-height: 100vh;
-
   max-width: 75rem;
   margin: 0 auto;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6rem 2rem 2rem 2rem;
+  box-sizing: border-box;
+  gap: 2rem;
   overflow: hidden;
 }
-.bg {
-  position: absolute;
-  padding: 2rem;
-  right: 0;
-  bottom: 6rem;
-  height: 75vh;
 
+.bg {
+  max-height: 65vh;
+  width: auto;
+  max-width: 45%;
   border-radius: 50px;
   object-fit: cover;
   z-index: 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 40px rgba(82, 39, 255, 0.2);
 }
 
 .introcontent {
-  height: 100vh;
-  width: 100vw;
-  padding: 2rem;
-  font-size: 3rem;
-  font-weight: 700;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  position: relative;
   z-index: 2;
   color: white;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .hello {
   font-size: 1.75rem;
   font-weight: 100;
+  margin-bottom: 0.5rem;
 }
 
 .introname {
@@ -43,23 +43,30 @@
 }
 
 .intropara {
-  font-size: medium;
+  font-size: 1.1rem;
   font-weight: 300;
   letter-spacing: 1px;
+  line-height: 1.5;
+  margin-top: 1rem;
 }
 
 .btn {
   background: white;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 2rem;
   font-size: medium;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .btn:hover {
   background-color: rgb(233, 225, 225);
+  transform: translateY(-2px);
 }
 
 .btn img {
@@ -67,24 +74,52 @@
   height: 1rem;
   width: 1rem;
   margin-right: 0.5rem;
-  margin-top: 0.2rem;
 }
 
 @media screen and (max-width: 840px) {
+  #intro {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 7rem;
+    gap: 1.5rem;
+  }
+
   .bg {
-    right: 0vw;
+    max-width: 250px;
+    max-height: 250px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    margin: 1rem auto;
+    object-fit: cover;
   }
-  .introContent {
-    font-size: 10vw;
-    color: black;
+
+  .introcontent {
+    align-items: center;
+    font-size: 2.2rem;
   }
+
   .hello {
-    font-size: 4.5vw;
+    font-size: 1.3rem;
+  }
+
+  .intropara {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .intropara br {
+    display: none;
   }
 }
 
 @media screen and (max-width: 480px) {
+  .introcontent {
+    font-size: 1.8rem;
+  }
+
   .bg {
-    right: -10vw;
+    max-width: 200px;
+    max-height: 200px;
   }
 }
