@@ -8,9 +8,21 @@ import close from "../assets/close.png";
 function Navbar() {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>("intro");
+  const [theme, setTheme] = useState<string>(() => {
+    return localStorage.getItem("theme") || "dark";
+  });
 
   useEffect(() => {
-    const sections = ["intro", "skills", "contactPage"];
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
+  useEffect(() => {
+    const sections = ["intro", "skills", "portfolio", "contactPage"];
     const observers = sections.map((id) => {
       const el = document.getElementById(id);
       if (!el) return null;
@@ -58,25 +70,60 @@ function Navbar() {
         </a>
         <a
           className={`desktopmenulist ${activeSection === "portfolio" ? "active" : ""}`}
-          onClick={() => handleScroll("intro")}
+          onClick={() => handleScroll("portfolio")}
           style={{ cursor: "pointer" }}
         >
           Portfolio
         </a>
       </div>
-      <button
-        className="desktop-menu-btn"
-        onClick={() => handleScroll("contactPage")}
-      >
-        <img src={contact} alt="contact" className="contact" />
-        Contact me
-      </button>
-      <img
-        src={showMenu ? close : menu}
-        alt="menu"
-        className="mobMenu"
-        onClick={() => setShowMenu(!showMenu)}
-      />
+      <div className="right-section">
+        <button
+          className="desktop-menu-btn"
+          onClick={() => handleScroll("contactPage")}
+        >
+          <img src={contact} alt="contact" className="contact" />
+          Contact me
+        </button>
+        <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
+          {theme === "dark" ? (
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" fill="currentColor" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          ) : (
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          )}
+        </button>
+        <img
+          src={showMenu ? close : menu}
+          alt="menu"
+          className="mobMenu"
+          onClick={() => setShowMenu(!showMenu)}
+        />
+      </div>
       <div className="navMenu" style={{ display: showMenu ? "flex" : "none" }}>
         <a
           className={`listItem ${activeSection === "intro" ? "active" : ""}`}
@@ -101,7 +148,7 @@ function Navbar() {
         <a
           className={`listItem ${activeSection === "portfolio" ? "active" : ""}`}
           onClick={() => {
-            handleScroll("intro");
+            handleScroll("portfolio");
             setShowMenu(false);
           }}
           style={{ cursor: "pointer" }}

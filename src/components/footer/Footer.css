@@ -15,10 +15,23 @@
 }
 
 .footimg {
-  object-fit: cover;
-  height: 2rem;
-  width: 2rem;
+  object-fit: contain;
+  height: 2.2rem;
+  width: 2.2rem;
   margin: 1rem 0.5rem;
-  border-radius: 9px;
-  background-color: white;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footimg:hover {
+  transform: scale(1.15);
+  filter: brightness(0) invert(1) opacity(0.8);
+}
+
+.footimg[alt="whatsapp"] {
+  transform: scale(1.12);
+}
+
+.footimg[alt="whatsapp"]:hover {
+  transform: scale(1.28);
 }

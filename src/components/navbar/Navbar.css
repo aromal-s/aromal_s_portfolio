@@ -55,6 +55,7 @@
 .desktop-menu-btn:hover {
   background-color: rgb(233, 225, 225);
 }
+
 .contact {
   object-fit: cover;
   height: 1rem;
@@ -94,11 +95,13 @@
   padding-bottom: 0.2rem;
   border-bottom: 2px solid rgb(195, 190, 190);
 }
+
 .mobMenu {
   display: none;
   object-fit: cover;
   height: 1.8rem;
 }
+
 .listItem:hover {
   color: rgb(195, 190, 190);
 
@@ -124,10 +127,96 @@
   .mobMenu {
     display: flex;
   }
+
   .desktop-menu {
     display: none;
   }
+
   .desktop-menu-btn {
     display: none;
   }
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, border-color 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.theme-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+/* Light mode overrides */
+:root[data-theme="light"] {
+  --text-primary: #000000;
+  --text-secondary: #333333;
+}
+
+[data-theme="light"] .navbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .desktopmenulist {
+  color: #000000;
+}
+
+
+[data-theme="light"] .desktopmenulist:hover,
+[data-theme="light"] .active {
+  color: #5227FF;
+  border-bottom-color: #5227FF;
+}
+
+[data-theme="light"] .desktop-menu {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .desktop-menu-btn {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+[data-theme="light"] .desktop-menu-btn:hover {
+  background-color: #444242ea;
+}
+
+[data-theme="light"] .theme-toggle {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #000000;
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .mobMenu {
+  filter: invert(1);
 }

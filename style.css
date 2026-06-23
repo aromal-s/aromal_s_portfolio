@@ -16,3 +16,108 @@ html, body {
   font-family: 'Courier New', Courier, monospace;
 }
 
+/* Light Mode Overrides */
+:root[data-theme="light"] {
+  background-color: #f7f9fc !important;
+}
+
+[data-theme="light"] body {
+  background-color: #f7f9fc !important;
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] #intro,
+[data-theme="light"] .introcontent,
+[data-theme="light"] #skills,
+[data-theme="light"] #portfolio,
+[data-theme="light"] #contactPage,
+[data-theme="light"] .contactPageTitle,
+[data-theme="light"] .contactDesc,
+[data-theme="light"] .copyright,
+[data-theme="light"] .portfolio-desc,
+[data-theme="light"] .portfolio-title,
+[data-theme="light"] .skillTitle,
+[data-theme="light"] .skillDesc,
+[data-theme="light"] .skillBarText h2,
+[data-theme="light"] .skillBarText p {
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .introname {
+  color: #5227FF !important;
+}
+
+[data-theme="light"] .btn,
+[data-theme="light"] .submitBtn,
+[data-theme="light"] .popupBtn {
+  background: #1a1a2e !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .btn:hover,
+[data-theme="light"] .submitBtn:hover,
+[data-theme="light"] .popupBtn:hover {
+  background-color: #33334d !important;
+}
+
+[data-theme="light"] .btn img {
+  filter: invert(1);
+}
+
+[data-theme="light"] .skillBar,
+[data-theme="light"] .portfolio-card,
+[data-theme="light"] .name,
+[data-theme="light"] .email,
+[data-theme="light"] .msg {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .skillBar:hover,
+[data-theme="light"] .portfolio-card:hover {
+  background: rgba(0, 0, 0, 0.07) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-theme="light"] .portfolio-info p {
+  color: #555555 !important;
+}
+
+[data-theme="light"] .portfolio-info h3 {
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .portfolio-visit-btn {
+  background: #1a1a2e !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .portfolio-visit-btn:hover {
+  background: #33334d !important;
+}
+
+[data-theme="light"] .name::placeholder,
+[data-theme="light"] .email::placeholder,
+[data-theme="light"] .msg::placeholder {
+  color: #777777 !important;
+}
+
+[data-theme="light"] canvas {
+  opacity: 0.15 !important;
+}
+
+[data-theme="light"] .footimg {
+  filter: brightness(0) saturate(100%) invert(10%) sepia(20%) saturate(4000%) hue-rotate(240deg) brightness(85%) contrast(90%); /* Gives social icons a premium matching deep navy/purple color in light mode */
+}
+
+[data-theme="light"] .footimg:hover {
+  transform: scale(1.15);
+  filter: brightness(0) saturate(100%) invert(15%) sepia(30%) saturate(5000%) hue-rotate(240deg) brightness(100%) contrast(100%);
+}
+
+[data-theme="light"] .desktop-menu-btn .contact {
+  filter: invert(1) !important;
+}
+
+

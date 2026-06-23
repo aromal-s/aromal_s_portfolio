@@ -2,8 +2,10 @@ import Lightfall from "./components/Lightfall";
 import Navbar from "./components/navbar/Navbar";
 import Intro from "./components/intro/Intro";
 import Skill from "./components/skills/Skill";
+import Portfolio from "./components/portfolio/Portfolio";
 import Footer from "./components/footer/Footer";
 import Contact from "./components/contact/Contact";
+
 function App() {
   return (
     <>
@@ -27,6 +29,7 @@ function App() {
       <Navbar></Navbar>
       <Intro></Intro>
       <Skill></Skill>
+      <Portfolio></Portfolio>
       <Contact></Contact>
       <Footer></Footer>
     </>

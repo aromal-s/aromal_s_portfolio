@@ -14,8 +14,7 @@ function Intro() {
           Software Developer
         </span>
         <span className="intropara">
-          I am a skilled software developer with experience in creating <br />
-          visually appealing and user friendly websites.
+          I am a skilled software developer with experience in creating visually appealing and user friendly websites.
         </span>
         <a
           href="mailto:aromals0479@gmail.com"
