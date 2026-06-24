@@ -13,7 +13,7 @@
 }
 
 .contactPageTitle {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 600;
   padding-top: 2rem;
   margin-bottom: 1.5rem;
@@ -139,5 +139,17 @@
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contactPageTitle {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contactPageTitle {
+    font-size: 1.8rem;
   }
 }
